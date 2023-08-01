@@ -24,8 +24,9 @@ public class Main {
         System.out.println("+++++++++++MAIN MENU++++++++++++++");
         System.out.println("++++++++++++++++++++++++++++++++++");
         System.out.println("Select Options");
-        System.out.println("1. Save new secret (e.g Keys, Passwords)");
-        System.out.println("2. Regenerate secret");
+        System.out.println("1. Generate secret");
+        System.out.println("2. Share new secret (e.g Keys, Passwords)");
+        System.out.println("3. Regenerate secret");
         System.out.println("0. Quit");
         System.out.println("++++++++++++++++++++++++++++++++++");
         System.out.println("Option >>");
@@ -34,8 +35,9 @@ public class Main {
         sc.nextLine();
 
         switch (selection) {
-            case 1 -> saveNewSecret(sc);
-            case 2 -> {
+            case 1 -> generateSecret(sc);
+            case 2 -> saveNewSecret(sc);
+            case 3 -> {
                 try{regenerateSecret(sc);}
                 catch (InputValidationException e){
                     System.out.println(e.getMessage());
@@ -49,6 +51,34 @@ public class Main {
             default -> {}
         }
     }
+
+    private static void generateSecret(Scanner sc) {
+        System.out.println("++++++++++++++++++++++++++++++++++");
+        System.out.println("++++++++++SECRET TYPE+++++++++++++");
+        System.out.println("++++++++++++++++++++++++++++++++++");
+        System.out.println("1. Password");
+        System.out.println("2. ETH Seed Phrase");
+
+        int selection = sc.nextInt();
+        sc.nextLine();
+
+        String secret;
+        if(selection == 2)
+            secret = SeedPhraseBip39.generateSeedPhrase(SeedPhraseBip39.TWELVE);
+        else
+            secret = PasswordGenerator.generatePass();
+        //print shares
+        System.out.println("Your secret below >>>>");
+        System.out.println();
+        System.out.println(secret);
+        System.out.println("------------");
+        System.out.println("Press enter to continue....");
+        sc.nextLine();
+
+        mainMenu(sc);
+
+    }
+
     private static void regenerateSecret(Scanner sc) throws InputValidationException {
         System.out.println("++++++++++++++++++++++++++++++++++");
         System.out.println("++++++++REGENERATE SECRET+++++++++");

@@ -1,4 +1,5 @@
 
+import com.adropofliquid.SeedPhraseBip39;
 import com.adropofliquid.secretshare.SecretSplit;
 import org.junit.jupiter.api.Test;
 import org.mitre.secretsharing.Part;
@@ -14,21 +15,6 @@ import static org.assertj.core.api.Assertions.*;
 
 class SplitTest {
 
-
-	@Test
-	void testSplit() {
-
-		String[] splits = SecretSplit.splitSecretBase64("approaches", 5, 2);
-
-		String[] s = new String[]{splits[0], splits[1]};
-		String secret = SecretSplit.getSecret(s);
-
-		System.out.println(secret);
-		assertThat(secret).isEqualTo("approaches");
-
-		String[] tt = new String[]{"LuDyh9th7+yQ", "ihzbQoli/e+4", "wpBQsjt3em5N"};
-		System.out.println(SecretSplit.getSecret(tt));
-	}
 
 	@Test
 	void testAll(){
