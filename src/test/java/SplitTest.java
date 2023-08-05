@@ -25,7 +25,7 @@ class SplitTest {
 				if(j != i) {
 					String[] s = new String[]{splits[i], splits[j]};
 					String secret = SecretSplit.getSecret(s);
-//					assertThat(secret).isEqualTo("approaches");
+					assertThat(secret).isEqualTo("approaches");
 					System.out.println(secret);
 				}
 			}
@@ -50,8 +50,6 @@ class SplitTest {
 					byte[] ss = Secrets.join(p);
 					String secretString = new String(ss, StandardCharsets.UTF_8);
 					assertThat(secretString).isEqualTo("approaches");
-
-//					System.out.println(secretString); I just like printing to the console init?
 				}
 			}
 		}

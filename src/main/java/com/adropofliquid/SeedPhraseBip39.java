@@ -10,9 +10,10 @@ public class SeedPhraseBip39 {
     public static final int TWENTY_FOUR = 32;
 
     public static String generateSeedPhrase(int byteArrayLength){
-        SecureRandom secureRandom = new SecureRandom();
-        byte[] initialEntropy = new byte[byteArrayLength]; //12 word seed
+        SecureRandom secureRandom = new SecureRandom(); //
+        byte[] initialEntropy = new byte[byteArrayLength];
         secureRandom.nextBytes(initialEntropy);
+
         return MnemonicUtils.generateMnemonic(initialEntropy);
     }
 }

@@ -51,7 +51,6 @@ public class Main {
             default -> {}
         }
     }
-
     private static void generateSecret(Scanner sc) {
         System.out.println("++++++++++++++++++++++++++++++++++");
         System.out.println("++++++++++SECRET TYPE+++++++++++++");
@@ -76,9 +75,7 @@ public class Main {
         sc.nextLine();
 
         mainMenu(sc);
-
     }
-
     private static void regenerateSecret(Scanner sc) throws InputValidationException {
         System.out.println("++++++++++++++++++++++++++++++++++");
         System.out.println("++++++++REGENERATE SECRET+++++++++");

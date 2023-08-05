@@ -27,19 +27,6 @@
             <version>5.9.3</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.github.adessose</groupId>
-            <artifactId>softauthn</artifactId>
-            <version>0.1.2</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.tiemens/secretshare -->
-        <!--        TODO should deprecate-->
-        <dependency>
-            <groupId>com.tiemens</groupId>
-            <artifactId>secretshare</artifactId>
-            <version>1.4.4</version>
-        </dependency>
 
         <dependency>
             <groupId>org.mitre.secretsharing</groupId>
