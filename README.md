@@ -1,1 +1,1 @@
-# Exploring a hybrid KMS with Multi-party computation
+# Exploring a Key Management System with Multi-party computation
